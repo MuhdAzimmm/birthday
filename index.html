@@ -19,11 +19,11 @@
       <input id="messageState" type="checkbox" hidden />
     </label>
     <div class="message">
-      <h1 style="font-family: Cinzel, serif; font-size: 30px; letter-spacing: 1.2px;">Hai Zyrahh🫶🏼</h1>
+      <h1 style="font-family: Cinzel, serif; font-size: 30px; letter-spacing: 1.2px;">Happy Birthday, Zyrahh🫶🏼</h1>
       <p id="typewriterText" class="typewriter-text"></p>
       <div class="sincere" style="display: none;">
         <p style="font-weight: bold;">With Love,</p>
-        <p>Ajiemmm imut😂</p>
+        <p>Ajiemmm</p>
       </div>
     </div>
   </div>
@@ -35,59 +35,62 @@
         <script src="jquery2.1.js"></script>
         <script defer src="valentine-confession.js"></script>
         <script>
-          const message = `  Happy Birthday zyrahh! Thank you for being my lovely friend. I hope your day is filled with all the little things that make you smile. Tau tak, You’re such a special person, and you deserve to feel all the love and joy. I’m really lucky to know you, and I hope this birthday feels just as warm and wonderful as your heart.
-       As you step into a new year of life, I hope it brings you so much happiness, growth, and peace. May you keep chasing your dreams, believing in yourself, and finding beauty in the everyday. You’ve already come so far, and I know even better things are ahead for you.
-        Take today to relax, laugh a lot, and be surrounded by the people who love you most. You mean more than you know, and I hope this next year is your best one yet. Wishing you all the love, light, and sweet moments your heart can hold. Happy birthday Zyrahh! 💛`;
-      
+          const message = `  Happy Birthday zyrahh!Sorry Lambat, Thank you for being my lovely friend. Saya mintak maaf for making you feel uncomfortable before, I hope your day is filled with all the little things that make you smile. trust me, kamu such a special person, and you deserve to feel all the love and joy. I’m really lucky to know you and saya proud dengan awak, and I hope this birthday feels just as warm and wonderful as your heart.
+         As you step into a new year of life, saya harap awak dapat happiness, growth, and peace yang awak nak. Kejarlah cita-cita yang awak nak, believing in yourself, and finding beauty in the everyday. You’ve already come so far, and I know even better things are ahead for you.
+          Take today to relax, laugh a lot, and be surrounded by the people who love you most. You mean more than you know, and I hope this year is your best one for now. Wishing you all the love, light, and sweet moments your heart can hold. Happy birthday Zyrahh! Saya sayang kamuuuu. Byebye💛`;
+        
           const textContainer = document.getElementById("typewriterText");
           const sincereDiv = document.querySelector(".sincere");
           let index = 0;
-      
+        
           function typeText() {
             if (index < message.length) {
               const char = message[index++];
               textContainer.innerHTML += char === "\n" ? "<br><br>" : char;
-              textContainer.scrollIntoView({ behavior: "smooth", block: "end" });
+              // Removed autoscroll here:
+              // textContainer.scrollIntoView({ behavior: "smooth", block: "end" });
               setTimeout(typeText, 55);
             } else {
               const endingDiv = document.createElement("div");
               endingDiv.className = "ending-image";
               endingDiv.style.textAlign = "center";
               endingDiv.style.marginTop = "20px";
-      
+        
               const img = document.createElement("img");
               img.src = "zyrah.jpg";
               img.alt = "Cute Image";
               img.style.cssText = "max-width: 30%; max-height: 40%; border-radius: 15px;";
               img.loading = "eager";
-      
+        
               img.onload = () => {
                 endingDiv.appendChild(img);
                 sincereDiv.style.display = "block";
-                window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+                // Removed autoscroll here:
+                // window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
               };
-      
+        
               textContainer.appendChild(endingDiv);
             }
           }
-      
+        
           window.onload = () => {
             typeText();
           };
-      
+        
           const audio = document.getElementById("myAudio");
           const button = document.getElementById("heart");
           let isPlaying = false;
-      
+        
           button.addEventListener("click", () => {
             isPlaying ? audio.pause() : audio.play();
             isPlaying = !isPlaying;
           });
-      
+        
           window.addEventListener("beforeunload", () => {
             audio.pause();
             audio.currentTime = 0;
           });
         </script>
+        
       </body>
       </html>
